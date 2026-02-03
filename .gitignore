@@ -1,3 +1,45 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+
+# Visual Studio / MonoDevelop
+.vs/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Unity generated meta files
+sysinfo.txt
+
+# Crashlytics and other crash reporting
+crashlytics-build.properties
+
+# Build outputs
+/*.apk
+/*.aab
+/*.unitypackage
+
+# NPM packages (if any tooling)
+node_modules/
+
+# Exclude log and temp files
+*.log
 # Created by https://www.toptal.com/developers/gitignore/api/unity
 # Edit at https://www.toptal.com/developers/gitignore?templates=unity
 
