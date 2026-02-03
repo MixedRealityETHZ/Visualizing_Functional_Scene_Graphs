@@ -338,24 +338,29 @@ public class BBoxLoader : MonoBehaviour
         sourceNodeComp.outgoingEdges.Add(lineObj); 
         // NEW: Add to target node's incoming list
         targetNodeComp.incomingEdges.Add(lineObj);
-        
-        lineObj.SetActive(false); // <--- HIDE THE EDGE BY DEFAULT
 
-        // // --- PART 3: The Text Label ---
-        // if (textPrefab != null)
-        // {
-        //     Vector3 midPoint = (startPos + endPos) / 2;
-        //     GameObject labelObj = Instantiate(textPrefab, midPoint + Vector3.up * 0.1f, Quaternion.identity);
-        //     labelObj.name = "EdgeLabel";
-        //     labelObj.transform.SetParent(lineObj.transform);
+        
+        // --- PART 3: The Text Label ---
+        if (textPrefab != null)
+        {
+            Vector3 midPoint = (startPos + endPos) / 2;
+            GameObject labelObj = Instantiate(textPrefab, midPoint + Vector3.up * 0.1f, Quaternion.identity);
+            labelObj.name = "EdgeLabel";
+            labelObj.transform.SetParent(lineObj.transform);
             
-        //     TextMeshPro tmp = labelObj.GetComponent<TextMeshPro>();
-        //     if(tmp != null) {
-        //         tmp.text = interaction.description;
-        //         tmp.fontSize = 2.0f;
-        //         tmp.color = Color.yellow; 
-        //     }
-        // }
+            TextMeshPro tmp = labelObj.GetComponent<TextMeshPro>();
+            if(tmp != null) {
+                tmp.text = interaction.description;
+                tmp.fontSize = 0.5f;
+                tmp.color = Color.yellow; 
+                // tmp.sortingOrder = 100;
+
+                // FIX FOR OCCLUSION: Force the material to ignore depth tests (Always draw on top)
+                tmp.fontSharedMaterial.SetInt("unity_GUIZTestMode", (int)UnityEngine.Rendering.CompareFunction.Always);
+            }
+        }
+
+        lineObj.SetActive(false); // <--- HIDE THE EDGE BY DEFAULT
     }
 
     Mesh CreateArrowMesh()

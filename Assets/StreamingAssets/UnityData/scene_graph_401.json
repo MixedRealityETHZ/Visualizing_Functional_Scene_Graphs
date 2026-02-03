@@ -267,6 +267,15 @@
             ],
             "interactions": [
                 {
+                    "target_object_idx": 2,
+                    "description": "hold and support",
+                    "color": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
                     "target_object_idx": 5,
                     "description": "hold and support",
                     "color": [
@@ -277,6 +286,15 @@
                 },
                 {
                     "target_object_idx": 7,
+                    "description": "hold and support",
+                    "color": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "target_object_idx": 16,
                     "description": "hold and support",
                     "color": [
                         1.0,

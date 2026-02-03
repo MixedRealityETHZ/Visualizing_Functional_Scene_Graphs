@@ -40,6 +40,9 @@ public class SceneGraphNode : MonoBehaviour
     // NEW: A list of all incoming connection GameObjects
     public List<GameObject> incomingEdges = new List<GameObject>();
 
+    // NEW: Reference to the node's text label
+    public GameObject nodeLabel;
+    
     // A reference to the main loader script for utility functions
     [HideInInspector]
     public BBoxLoader loader; 
@@ -105,6 +108,13 @@ public class SceneGraphNode : MonoBehaviour
 
     public void SetEdgesVisibility(bool isVisible)
     {
+        // NEW: Control visibility for the node's label
+        if (nodeLabel != null)
+        {
+            nodeLabel.SetActive(isVisible);
+        }
+
+        // Iterate over outgoing edges
         foreach (GameObject edge in outgoingEdges)
         {
             edge.SetActive(isVisible);

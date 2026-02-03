@@ -71,7 +71,17 @@
                 0.1602996371426717,
                 0.18563918779718724
             ],
-            "interactions": []
+            "interactions": [
+                {
+                    "target_object_idx": 31,
+                    "description": "can water",
+                    "color": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
+            ]
         },
         {
             "id": 3,
